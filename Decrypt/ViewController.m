@@ -10,7 +10,7 @@
 #import "AESCrypt.h"
 
 
-#define PASSWORD @"PASSWORD"
+#define PASSWORD @"qiuzhifei"
 
 #define DOCUMENTPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 
@@ -29,18 +29,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString * text = @"123";
-    
-    text = [AESCrypt encrypt:text
-                    password:PASSWORD];
-    
-    text = [AESCrypt decrypt:text
-                    password:PASSWORD];
-    
-    NSLog(@"text == %@", text);
-
+    [self encryptWithName:@"midi"];
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)encryptWithName:(NSString *)name
+{
+    NSString * path = [[NSBundle mainBundle] pathForResource:name ofType:@"txt"];
+    NSString * string = [[NSString alloc] initWithContentsOfFile:path
+                                                        encoding:NSUTF8StringEncoding
+                                                           error:nil];
+    
+    string = [AESCrypt encrypt:string
+                      password:PASSWORD];
+    
+    NSString * savePath = [DOCUMENTPATH stringByAppendingPathComponent:[name stringByAppendingFormat:@".txt"]];
+    
+    [string writeToFile:savePath
+             atomically:YES
+               encoding:NSUTF8StringEncoding
+                  error:nil];
+    
+    
+    string = [[NSString alloc] initWithContentsOfFile:savePath
+                                             encoding:NSUTF8StringEncoding
+                                                error:nil];
+    
+    string = [AESCrypt decrypt:string
+                      password:PASSWORD];
+    
+    NSLog(@"save path == %@", savePath);
+    
+    NSLog(@"string == %@", string);
 }
 
 - (void)didReceiveMemoryWarning {

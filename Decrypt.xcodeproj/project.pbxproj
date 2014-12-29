@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		045F11671A497E4400406E28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045F11661A497E4400406E28 /* Foundation.framework */; };
 		045F11691A497E5C00406E28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045F11681A497E5C00406E28 /* UIKit.framework */; };
+		045F11701A49804300406E28 /* midi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 045F116F1A49804300406E28 /* midi.txt */; };
 		04BC68E31A497B08002D91FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC68E21A497B08002D91FF /* main.m */; };
 		04BC68E61A497B08002D91FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC68E51A497B08002D91FF /* AppDelegate.m */; };
 		04BC68E91A497B08002D91FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC68E81A497B08002D91FF /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		045F11661A497E4400406E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		045F11681A497E5C00406E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		045F116F1A49804300406E28 /* midi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midi.txt; sourceTree = "<group>"; };
 		04BC68DD1A497B08002D91FF /* Decrypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decrypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BC68E11A497B08002D91FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BC68E21A497B08002D91FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				04BC68E51A497B08002D91FF /* AppDelegate.m */,
 				04BC68E71A497B08002D91FF /* ViewController.h */,
 				04BC68E81A497B08002D91FF /* ViewController.m */,
+				045F116F1A49804300406E28 /* midi.txt */,
 				04BC68EA1A497B08002D91FF /* Main.storyboard */,
 				04BC68ED1A497B08002D91FF /* Images.xcassets */,
 				04BC68EF1A497B08002D91FF /* LaunchScreen.xib */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BC68EC1A497B08002D91FF /* Main.storyboard in Resources */,
+				045F11701A49804300406E28 /* midi.txt in Resources */,
 				04BC68F11A497B08002D91FF /* LaunchScreen.xib in Resources */,
 				04BC68EE1A497B08002D91FF /* Images.xcassets in Resources */,
 			);
@@ -435,6 +439,78 @@
 			};
 			name = Release;
 		};
+		04F9E7141A4D57BA001622DE /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a153cf75-cf9b-4dbf-8a96-2d307b0d7896";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = AdHoc;
+		};
+		04F9E7151A4D57BA001622DE /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Decrypt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = AdHoc;
+		};
+		04F9E7161A4D57BA001622DE /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DecryptTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decrypt.app/Decrypt";
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +518,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04BC68FE1A497B08002D91FF /* Debug */,
+				04F9E7141A4D57BA001622DE /* AdHoc */,
 				04BC68FF1A497B08002D91FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -451,6 +528,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04BC69011A497B08002D91FF /* Debug */,
+				04F9E7151A4D57BA001622DE /* AdHoc */,
 				04BC69021A497B08002D91FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -460,6 +538,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04BC69041A497B08002D91FF /* Debug */,
+				04F9E7161A4D57BA001622DE /* AdHoc */,
 				04BC69051A497B08002D91FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
